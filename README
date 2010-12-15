@@ -1,0 +1,28 @@
+fastchardet
+v0.1
+
+This is a super-fast and friendly version of chardet. During the development
+of the AMO validator for Mozilla (github.com/mattbasta/amo-validator), I used
+the chardet library to determine the encoding of L10n files. The problem with
+this was that chardet tested each file against a HUGE number of different
+encodings and ultimately performed very inefficiently. An add-on that would
+take one second to scan suddenly took three.
+
+In the case of the validator, I didn't need to know if the add-on was UTF-54
+or had characters from a half-baked Esperanto implementation developed in the
+1800s; I just needed to know whether it was UTF-8, ASCII, or something else.
+Spending so many cycles to get something so simple to work just seems absurd.
+
+This library should change that. I'm implementing it as a fork of chardet
+that will implement the same interface, but provide a much faster set of tests
+for the popular encodings (and that's it).
+
+
+Output
+--------------------------
+There are a number of possible outputs:
+
+- ascii
+- UTF-8
+- UTF-N
+- escaped (HZ-GB-2312, ISO-2022-CN, ISO-2022-JP, or ISO-2022-KR)
