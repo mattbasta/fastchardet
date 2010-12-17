@@ -29,3 +29,6 @@ There are a number of possible outputs:
 - latin1
 
 And that's it. It doesn't test for anything else.
+
+Oh, and unlike chardet, we'll actually return "unicode" as the encoding if you
+pass in a unicode string rather than throwing exceptions. How great is that?

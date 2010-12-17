@@ -56,6 +56,11 @@ class UniversalDetector:
             prober.reset()
 
     def feed(self, aBuf):
+        if isinstance(aBuf, unicode):
+            self.result = {'encoding': "unicode", 'confidence': 0.0}
+            self.done = constants.True
+            return
+        
         if self.done: return
 
         aLen = len(aBuf)
