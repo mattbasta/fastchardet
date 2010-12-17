@@ -30,7 +30,6 @@
 import constants, sys
 from latin1prober import Latin1Prober # windows-1252
 from utf8prober import UTF8Prober # utf-8
-from escprober import EscCharSetProber # ISO-2122, etc.
 import re
 
 MINIMUM_THRESHOLD = 0.20
