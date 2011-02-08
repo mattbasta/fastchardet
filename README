@@ -27,6 +27,7 @@ There are a number of possible outputs:
 - UTF-N
 - escaped (HZ-GB-2312, ISO-2022-CN, ISO-2022-JP, or ISO-2022-KR)
 - latin1
+- unknown
 
 And that's it. It doesn't test for anything else.
 

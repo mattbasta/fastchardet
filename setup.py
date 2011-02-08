@@ -11,7 +11,7 @@ if not hasattr(DistributionMetadata, 'download_url'):
 setup(
     name = "fastchardet",
     packages = ["fastchardet"],
-    version = "0.1",
+    version = "0.1.1",
     license = "LGPL",
     platforms = ['POSIX', 'Windows'],
     description = "Fast universal encoding detector",

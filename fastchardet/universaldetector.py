@@ -57,7 +57,7 @@ class UniversalDetector:
 
     def feed(self, aBuf):
         if isinstance(aBuf, unicode):
-            self.result = {'encoding': "unicode", 'confidence': 0.0}
+            self.result = {'encoding': "unicode", 'confidence': 1.0}
             self.done = constants.True
             return
         
@@ -106,11 +106,8 @@ class UniversalDetector:
                     break
 
     def close(self):
-        if self.done: return
-        if not self._mGotData:
-            if constants._debug:
-                sys.stderr.write('no data received!\n')
-            return
+        if self.done or not self._mGotData:
+            return self.result
         self.done = constants.True
         
         if self._mInputState == ePureAscii:
