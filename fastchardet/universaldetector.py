@@ -46,7 +46,7 @@ class UniversalDetector:
         self.reset()
 
     def reset(self):
-        self.result = {'encoding': None, 'confidence': 0.0}
+        self.result = {'encoding': "unknown", 'confidence': 0.0}
         self.done = constants.False
         self._mStart = constants.True
         self._mGotData = constants.False
@@ -132,10 +132,5 @@ class UniversalDetector:
                                'confidence': maxProber.get_confidence()}
                 return self.result
 
-        if constants._debug:
-            sys.stderr.write('no probers hit minimum threshhold\n')
-            for prober in self._mCharSetProbers[0].mProbers:
-                if not prober: continue
-                sys.stderr.write('%s confidence = %s\n' % \
-                                 (prober.get_charset_name(), \
-                                  prober.get_confidence()))
+        return {'encoding': "unknown",
+                'confidence': 0.0}
