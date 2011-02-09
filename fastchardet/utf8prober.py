@@ -45,7 +45,7 @@ class UTF8Prober(CharSetProber):
         self._mNumOfMBChar = 0
 
     def get_charset_name(self):
-        return "utf-8"
+        return "utf_8"
 
     def feed(self, aBuf):
         for c in aBuf:
