@@ -7,11 +7,11 @@ if not hasattr(DistributionMetadata, 'classifiers'):
     DistributionMetadata.classifiers = None
 if not hasattr(DistributionMetadata, 'download_url'):
     DistributionMetadata.download_url = None
-    
+
 setup(
     name = "fastchardet",
     packages = ["fastchardet"],
-    version = "0.1.2",
+    version = "0.2.0",
     license = "LGPL",
     platforms = ['POSIX', 'Windows'],
     description = "Fast universal encoding detector",
